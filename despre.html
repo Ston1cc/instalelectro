@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Despre InstalElectro — Electricieni Autorizați Chișinău</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { navy: { 950: '#0a1520', 900: '#0e1c2e', 800: '#1a2535', 700: '#243347' } } } }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; color: #1f2937; }
+    h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; }
+    .tag { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: #dc2626; }
+    .page-hero-bg { background: linear-gradient(105deg, rgba(10,21,32,0.95) 0%, rgba(26,37,53,0.85) 100%), url('img/hero_img.jpg') center/cover no-repeat; }
+    .hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+    .img-zoom { overflow: hidden; }
+    .img-zoom img { transition: transform 0.45s ease; }
+    .img-zoom:hover img { transform: scale(1.06); }
+  
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- ░░ TOP BAR ░░ -->
+  <div class="bg-navy-950 text-gray-400 text-xs py-2 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <a href="tel:+37368557199" class="flex items-center gap-1.5 hover:text-white transition-colors">
+          <i class="fas fa-phone-alt text-red-600"></i> +373 68 557 199
+        </a>
+        <a href="mailto:info@instalelectro.md" class="hidden md:flex items-center gap-1.5 hover:text-white transition-colors">
+          <i class="fas fa-envelope text-red-600"></i> info@instalelectro.md
+        </a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#" class="hover:text-white transition-colors w-6 h-6 flex items-center justify-center"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-white transition-colors w-6 h-6 flex items-center justify-center"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-white transition-colors w-6 h-6 flex items-center justify-center"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ NAVIGATION ░░ -->
+  <nav class="bg-navy-800 sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-[68px]">
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <img src="img/605603934_18090167021296504_5017235545341432250_n.jpg" alt="InstalElectro" class="h-11 w-auto">
+        </a>
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-white">Acasă</a>
+          <a href="despre.html" class="text-sm font-medium text-white relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-red-600">Despre</a>
+          <a href="servicii.html" class="text-sm font-medium text-gray-400 hover:text-white">Servicii</a>
+          <a href="servicii.html#preturi" class="text-sm font-medium text-gray-400 hover:text-white">Prețuri</a>
+          <a href="blog.html" class="text-sm font-medium text-gray-400 hover:text-white">Blog</a>
+          <a href="contact.html" class="text-sm font-medium text-gray-400 hover:text-white">Contact</a>
+        </div>
+        <a href="contact.html" class="hidden lg:flex items-center gap-2 border border-white/25 hover:bg-white/10 text-white text-xs font-semibold px-5 py-[9px] transition-colors rounded-sm whitespace-nowrap">
+          Solicită ofertă
+        </a>
+        <a href="tel:+37368557199" class="hidden lg:flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-6 py-3 tracking-widest uppercase transition-colors rounded-sm">
+          <i class="fas fa-phone"></i> APELAȚI
+        </a>
+        <button class="lg:hidden text-white p-2 -mr-2"><i class="fas fa-bars text-xl"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ░░ PAGE HERO ░░ -->
+  <section class="page-hero-bg py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-gray-400 text-xs mb-3"><a href="index.html" class="hover:text-white transition-colors">Acasă</a> <span class="mx-2 text-gray-600">/</span> <span class="text-white">Despre</span></p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Despre InstalElectro</h1>
+      <p class="text-gray-400 mt-3 max-w-xl text-sm leading-relaxed">Electricieni autorizați din Chișinău cu peste 10 ani de experiență în instalări și reparații electrice profesionale.</p>
+    </div>
+  </section>
+
+  <!-- ░░ STORY ░░ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="tag mb-3">Povestea noastră</p>
+          <h2 class="text-4xl font-bold text-gray-900 leading-tight mb-6">
+            Suntem o echipă de electricieni autorizați din Chișinău
+          </h2>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            InstalElectro a luat ființă din dorința de a oferi servicii electrice de înaltă calitate, transparente și la prețuri corecte pentru locuitorii din Chișinău și împrejurimi.
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            Echipa noastră este formată din electricieni autorizați, cu experiență vastă în instalații electrice rezidențiale, comerciale și industriale. Fiecare proiect este tratat cu maximă responsabilitate și profesionalism.
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-8">
+            Suntem disponibili 24/7 pentru urgențe electrice și oferim consultanță gratuită pentru a ajuta clienții noștri să ia cele mai bune decizii pentru locuința sau afacerea lor.
+          </p>
+          <a href="contact.html" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-7 py-3.5 rounded-sm transition-colors">
+            Contactează-ne <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+        <div class="relative">
+          <div class="img-zoom rounded-sm overflow-hidden shadow-2xl">
+            <img src="img/teamofelectricians.jpg" alt="Echipa InstalElectro" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-5 -left-5 bg-red-600 text-white px-7 py-5 shadow-xl rounded-sm">
+            <p class="text-3xl font-bold leading-none">10+</p>
+            <p class="text-xs text-red-200 mt-1 font-medium">Ani de experiență</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ STATS ░░ -->
+  <section class="py-20 bg-navy-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-5xl font-bold text-white mb-2">10+</p>
+          <p class="text-gray-400 text-sm">Ani de experiență</p>
+        </div>
+        <div>
+          <p class="text-5xl font-bold text-white mb-2">500+</p>
+          <p class="text-gray-400 text-sm">Clienți mulțumiți</p>
+        </div>
+        <div>
+          <p class="text-5xl font-bold text-white mb-2">1200+</p>
+          <p class="text-gray-400 text-sm">Proiecte finalizate</p>
+        </div>
+        <div>
+          <p class="text-5xl font-bold text-red-500 mb-2">24/7</p>
+          <p class="text-gray-400 text-sm">Disponibilitate urgențe</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ VALUES ░░ -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="tag mb-3">Valorile noastre</p>
+        <h2 class="text-4xl font-bold text-gray-900">De ce să alegeți InstalElectro?</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="bg-white p-8 rounded-sm shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
+            <i class="fas fa-certificate text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Autorizați și certificați</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Toți electricienii noștri sunt autorizați de ANRE Moldova. Lucrăm conform normelor și standardelor în vigoare pentru siguranța dvs.</p>
+        </div>
+        <div class="bg-white p-8 rounded-sm shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
+            <i class="fas fa-hand-shake text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Transparență totală</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Prețuri clare și transparente, fără costuri ascunse. Primiți o ofertă detaliată înainte de începerea oricărei lucrări electrice.</p>
+        </div>
+        <div class="bg-white p-8 rounded-sm shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
+            <i class="fas fa-shield-halved text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Garanție pe lucrări</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Oferim garanție de 1 an pentru toate lucrările executate. Dacă apare orice problemă, revenim și remediăm gratuit.</p>
+        </div>
+        <div class="bg-white p-8 rounded-sm shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
+            <i class="fas fa-clock text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Disponibili 24/7</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Urgențele electrice nu aleg momentul. Suntem disponibili non-stop, inclusiv în weekend și sărbători, pentru intervenții rapide.</p>
+        </div>
+        <div class="bg-white p-8 rounded-sm shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
+            <i class="fas fa-tools text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Echipamente premium</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Utilizăm doar materiale electrice certificate și echipamente de ultimă generație pentru a asigura durabilitatea și siguranța instalațiilor.</p>
+        </div>
+        <div class="bg-white p-8 rounded-sm shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
+            <i class="fas fa-comments text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-xl mb-3">Consultanță gratuită</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Oferim consultanță electrică gratuită, atât telefonic cât și la domiciliu, pentru a vă ajuta să planificați corect orice lucrare electrică.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ TEAM ░░ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="tag mb-3">Echipa noastră</p>
+        <h2 class="text-4xl font-bold text-gray-900">Electricieni autorizați la dispoziția dvs.</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="text-center hover-lift bg-gray-50 rounded-sm overflow-hidden">
+          <div class="h-64 img-zoom">
+            <img src="img/hero_img.jpg" alt="Electrician 1" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-gray-900 text-lg mb-1">Alexandru Ionescu</h4>
+            <p class="text-red-600 text-xs font-semibold uppercase tracking-wider mb-3">Electrician Șef</p>
+            <p class="text-gray-500 text-xs leading-relaxed">12 ani experiență · Autorizat ANRE Moldova</p>
+          </div>
+        </div>
+        <div class="text-center hover-lift bg-gray-50 rounded-sm overflow-hidden">
+          <div class="h-64 img-zoom">
+            <img src="img/SaveClip.App_686044914_18104045105296504_8299296285579802293_n.jpg" alt="Electrician 2" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-gray-900 text-lg mb-1">Mihai Popescu</h4>
+            <p class="text-red-600 text-xs font-semibold uppercase tracking-wider mb-3">Electrician Autorizat</p>
+            <p class="text-gray-500 text-xs leading-relaxed">8 ani experiență · Specialist tablouri electrice</p>
+          </div>
+        </div>
+        <div class="text-center hover-lift bg-gray-50 rounded-sm overflow-hidden">
+          <div class="h-64 img-zoom">
+            <img src="img/teamofelectricians.jpg" alt="Electrician 3" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-gray-900 text-lg mb-1">Andrei Constantin</h4>
+            <p class="text-red-600 text-xs font-semibold uppercase tracking-wider mb-3">Specialist Urgențe</p>
+            <p class="text-gray-500 text-xs leading-relaxed">7 ani experiență · Disponibil 24/7</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CTA ░░ -->
+  <section class="py-20 bg-red-600">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-white mb-4">Aveți nevoie de un electrician autorizat?</h2>
+      <p class="text-red-100 text-sm leading-relaxed mb-8 max-w-xl mx-auto">Contactați-ne acum pentru o consultanță gratuită sau o ofertă personalizată. Suntem la un apel distanță!</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="tel:+37368557199" class="inline-flex items-center gap-2 bg-white text-red-600 font-bold px-8 py-4 rounded-sm text-sm hover:bg-red-50 transition-colors">
+          <i class="fas fa-phone"></i> +373 68 557 199
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-2 border-2 border-white/60 text-white font-bold px-8 py-4 rounded-sm text-sm hover:border-white transition-colors">
+          Trimite solicitare <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="bg-navy-900">
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+      <div class="grid md:grid-cols-12 gap-10 mb-14">
+        <div class="md:col-span-4">
+          <a href="index.html" class="flex items-center gap-2.5 mb-5">
+            <img src="img/605603934_18090167021296504_5017235545341432250_n.jpg" alt="InstalElectro" class="h-11 w-auto">
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Servicii electrice profesionale în Chișinău. Electricieni autorizați pentru instalări, reparații și urgențe.</p>
+          <div class="flex gap-2">
+            <a href="#" class="w-9 h-9 bg-white/8 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all rounded-sm text-sm"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="w-9 h-9 bg-white/8 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all rounded-sm text-sm"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="w-9 h-9 bg-white/8 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all rounded-sm text-sm"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-5">Navigare</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="text-gray-500 text-sm hover:text-white transition-colors">Acasă</a></li>
+            <li><a href="despre.html" class="text-gray-500 text-sm hover:text-white transition-colors">Despre noi</a></li>
+            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Servicii</a></li>
+            <li><a href="servicii.html#preturi" class="text-gray-500 text-sm hover:text-white transition-colors">Prețuri</a></li>
+            <li><a href="blog.html" class="text-gray-500 text-sm hover:text-white transition-colors">Blog</a></li>
+            <li><a href="contact.html" class="text-gray-500 text-sm hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3">
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-5">Servicii</h4>
+          <ul class="space-y-2.5">
+            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Instalări electrice Chișinău</a></li>
+            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Reparații electrice Chișinău</a></li>
+            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Urgențe electrice 24/7</a></li>
+            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Tablouri electrice</a></li>
+            <li><a href="contact.html" class="text-gray-500 text-sm hover:text-white transition-colors">Consultanță gratuită</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3">
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-5">Contact</h4>
+          <ul class="space-y-3.5">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-phone text-red-500 text-xs mt-1 w-4 shrink-0"></i>
+              <div>
+                <a href="tel:+37368557199" class="text-gray-400 text-sm hover:text-white transition-colors block">+373 68 557 199</a>
+                <a href="tel:+37368557199" class="text-gray-400 text-sm hover:text-white transition-colors block">+373 68 557 199</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-envelope text-red-500 text-xs mt-1 w-4 shrink-0"></i>
+              <a href="mailto:info@instalelectro.md" class="text-gray-400 text-sm hover:text-white transition-colors">info@instalelectro.md</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-red-500 text-xs mt-1 w-4 shrink-0"></i>
+              <span class="text-gray-400 text-sm">Bd. Mircea Costin 23, Chișinău</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600 text-xs">© 2026 InstalElectro. Servicii electrice profesionale în Chișinău. Toate drepturile rezervate.</p>
+        <p class="text-gray-600 text-xs">Designed for <span class="text-gray-500">instalelectro.md</span></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ░░ DISCOUNT POPUP ░░ -->
+  <div id="ie-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);backdrop-filter:blur(5px);align-items:center;justify-content:center;opacity:0;transition:opacity .4s ease;" role="dialog" aria-modal="true">
+    <div id="ie-box" style="background:#fff;max-width:420px;width:calc(100% - 2rem);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.35);transform:scale(.9);transition:transform .45s cubic-bezier(.34,1.56,.64,1);position:relative;">
+      <button onclick="ieClose()" aria-label="Inchide" style="position:absolute;top:10px;right:10px;width:28px;height:28px;background:rgba(255,255,255,.15);border:none;cursor:pointer;border-radius:50%;color:white;font-size:15px;display:flex;align-items:center;justify-content:center;z-index:2;">&#x2715;</button>
+      <!-- Header dark -->
+      <div style="background:#1a2535;padding:2.25rem 1.75rem;text-align:center;">
+        <div style="width:54px;height:54px;background:#dc2626;border-radius:2px;margin:0 auto .9rem;display:flex;align-items:center;justify-content:center;">
+          <svg width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+        </div>
+        <p style="color:#f87171;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:.35rem;font-family:'DM Sans',sans-serif;">Ofertă specială</p>
+        <p style="color:white;font-size:2.1rem;font-weight:800;line-height:1.1;font-family:'Syne',sans-serif;margin-bottom:.3rem;">10% Reducere</p>
+        <p style="color:#9ca3af;font-size:.85rem;font-family:'DM Sans',sans-serif;">La prima ta comandă de servicii electrice!</p>
+      </div>
+      <!-- Body -->
+      <div style="padding:1.6rem 1.75rem 1.75rem;text-align:center;">
+        <p style="color:#6b7280;font-size:.82rem;margin-bottom:1rem;font-family:'DM Sans',sans-serif;">Menționați codul la contact pentru a beneficia de reducere:</p>
+        <div style="background:#fef2f2;border:2px dashed #fca5a5;padding:.8rem 1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
+          <span style="font-size:1.55rem;font-weight:800;color:#dc2626;letter-spacing:.2em;font-family:'Syne',sans-serif;">ELECTRO10</span>
+          <button id="ie-copy" onclick="ieCopy()" title="Copiați codul" style="width:34px;height:34px;min-width:34px;background:#dc2626;border:none;cursor:pointer;border-radius:2px;display:flex;align-items:center;justify-content:center;color:white;transition:background .2s;">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+        <p style="color:#9ca3af;font-size:.7rem;margin-bottom:1rem;font-family:'DM Sans',sans-serif;">Valabil pentru comenzi noi. Nu se combină cu alte oferte.</p>
+        <a href="contact.html" onclick="ieClose()" style="display:block;background:#dc2626;color:white;font-weight:700;padding:.85rem;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-family:'DM Sans',sans-serif;transition:background .2s;" onmouseover="this.style.background='#b91c1c'" onmouseout="this.style.background='#dc2626'">
+          Solicită oferta acum &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  /* ── Popup ── */
+  (function(){
+    if(sessionStorage.getItem('ie_popup'))return;
+    var p=document.getElementById('ie-popup'),b=document.getElementById('ie-box');
+    setTimeout(function(){
+      p.style.display='flex';
+      requestAnimationFrame(function(){requestAnimationFrame(function(){
+        p.style.opacity='1';b.style.transform='scale(1)';
+      });});
+      sessionStorage.setItem('ie_popup','1');
+    },4500);
+    if(p)p.addEventListener('click',function(e){if(e.target===p)ieClose();});
+  })();
+  function ieClose(){
+    var p=document.getElementById('ie-popup'),b=document.getElementById('ie-box');
+    if(!p)return;
+    p.style.opacity='0';b.style.transform='scale(.88)';
+    setTimeout(function(){p.style.display='none';},420);
+  }
+  function ieCopy(){
+    try{navigator.clipboard.writeText('ELECTRO10');}catch(ex){}
+    var btn=document.getElementById('ie-copy');
+    btn.style.background='#16a34a';
+    btn.innerHTML='<svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+    setTimeout(function(){
+      btn.style.background='#dc2626';
+      btn.innerHTML='<svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
+    },2500);
+  }
+
+  /* ── Scroll reveal ── */
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('section').forEach(function(sec){
+      var els=Array.from(sec.querySelectorAll(
+        'h2, h3, article, .grid > div, .grid > a, .grid > article, p.tag, form'
+      ));
+      els.forEach(function(el,i){
+        if(el.classList.contains('reveal'))return;
+        el.classList.add('reveal');
+        el.style.transitionDelay=(i*0.075)+'s';
+      });
+    });
+    if(!('IntersectionObserver'in window)){
+      document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+      });
+    },{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  });
+  </script>
+</body>
+</html>
