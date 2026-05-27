@@ -3,571 +3,337 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicii Electrice Chișinău — InstalElectro</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>InstalElectro &mdash; Servicii Electrice Chi&#537;in&#259;u | Tarife &#537;i Pre&#539;uri</title>
+  <meta name="description" content="Servicii electrice complete in Chisinau: instalari, reparatii, panou electric, urgente 24/7. Preturi transparente, garantie 100%.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      theme: { extend: { colors: { navy: { 950: '#0a1520', 900: '#0e1c2e', 800: '#1a2535', 700: '#243347' } } } }
-    }
+    tailwind.config={theme:{extend:{colors:{primary:"#00254a","primary-dark":"#001a35",accent:"#0d6efd","accent-h":"#0a58ca",body:"#727272",dark:"#16171a",g1:"#f5f7fa"},fontFamily:{sans:["\"DM Sans\"","sans-serif"]}}}}
   </script>
   <style>
-    body { font-family: 'DM Sans', sans-serif; color: #1f2937; }
-    h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; }
-    .tag { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: #dc2626; }
-    .page-hero-bg { background: linear-gradient(105deg, rgba(10,21,32,0.95) 0%, rgba(26,37,53,0.85) 100%), url('img/hero_img.jpg') center/cover no-repeat; }
-    .hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-    .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
-    .img-zoom { overflow: hidden; }
-    .img-zoom img { transition: transform 0.45s ease; }
-    .img-zoom:hover img { transform: scale(1.06); }
-  
-    /* ── Scroll reveal ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1);
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-  
-    /* ── Mobile / Global ── */
-    html { scroll-behavior: smooth; }
-    body { overflow-x: hidden; }
-    a, button { -webkit-tap-highlight-color: transparent; }
-    img { max-width: 100%; }
-    @media (max-width: 1023px) {
-      body { padding-bottom: 68px; }   /* room for floating CTA */
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;color:#727272;background:#fff;overflow-x:hidden}
+    img{max-width:100%}a{-webkit-tap-highlight-color:transparent}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+    .dnav-link{position:relative;font-size:.875rem;font-weight:500;color:rgba(255,255,255,.72);transition:color .2s;padding:4px 0}
+    .dnav-link::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#0d6efd;transition:width .25s}
+    .dnav-link:hover,.dnav-link.active{color:#fff}
+    .dnav-link:hover::after,.dnav-link.active::after{width:100%}
+    .icon-circle{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+    .stag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0d6efd;margin-bottom:10px}
+    #mobile-menu{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1)}
+    .mob-link{display:flex;align-items:center;padding:.7rem .75rem;color:#495057;font-size:.875rem;font-weight:500;border-radius:4px;transition:background .15s,color .15s}
+    .mob-link:hover,.mob-link.active{color:#00254a;background:#f5f7fa;font-weight:600}
+    @media(max-width:1023px){body{padding-bottom:68px}}
+    .form-input{width:100%;border:1.5px solid #e9ecef;border-radius:6px;padding:13px 16px;font-size:.875rem;font-family:"DM Sans",sans-serif;color:#16171a;transition:border-color .2s;outline:none}
+    .form-input:focus{border-color:#0d6efd}
+    .form-input::placeholder{color:#adb5bd}
+    .btn-p{display:inline-flex;align-items:center;gap:8px;background:#00254a;color:#fff;font-weight:700;font-family:"DM Sans",sans-serif;padding:14px 28px;border-radius:6px;transition:background .2s;border:none;cursor:pointer;text-decoration:none;font-size:.875rem}
+    .btn-p:hover{background:#001a35}
+    .btn-a{display:inline-flex;align-items:center;gap:8px;background:#0d6efd;color:#fff;font-weight:700;font-family:"DM Sans",sans-serif;padding:14px 28px;border-radius:6px;transition:background .2s;text-decoration:none;font-size:.875rem}
+    .btn-a:hover{background:#0a58ca}
+    .card-hover{transition:transform .3s,box-shadow .3s}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,37,74,.13)}
+    .page-hero{padding:80px 0;background:#00254a;position:relative;overflow:hidden}
+    .page-hero::after{content:"";position:absolute;inset:0;background:url('img/hero_img.jpg') center/cover no-repeat;opacity:.1;z-index:0}
+    .page-hero>*{position:relative;z-index:1}
   </style>
 </head>
-<body class="bg-white">
-
-  <!-- ░░ TOP BAR ░░ -->
-  <div class="hidden sm:block bg-navy-950 text-gray-400 text-xs py-2 border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-      <div class="flex items-center gap-6">
-        <a href="tel:+37368557199" class="flex items-center gap-1.5 hover:text-white transition-colors">
-          <i class="fas fa-phone-alt text-red-600"></i> +373 68 557 199
-        </a>
-        <a href="mailto:info@instalelectro.md" class="hidden md:flex items-center gap-1.5 hover:text-white transition-colors">
-          <i class="fas fa-envelope text-red-600"></i> info@instalelectro.md
-        </a>
+<body>
+<!-- TOP BAR -->
+<div class="hidden sm:block" style="background:#00254a;border-bottom:1px solid rgba(255,255,255,.07)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between">
+    <div class="flex items-center gap-5 text-xs" style="color:rgba(255,255,255,.65)">
+      <a href="tel:+37368557199" class="flex items-center gap-1.5 hover:text-white transition-colors"><i class="fas fa-phone text-[10px]" style="color:#0d6efd"></i> +373 68 557 199</a>
+      <a href="mailto:info@instalelectro.md" class="flex items-center gap-1.5 hover:text-white transition-colors"><i class="fas fa-envelope text-[10px]" style="color:#0d6efd"></i> info@instalelectro.md</a>
+      <span class="hidden md:flex items-center gap-1.5"><i class="fas fa-location-dot text-[10px]" style="color:#0d6efd"></i> Bd. Mircea Costin 23, Chi&#537;in&#259;u</span>
+    </div>
+    <div class="flex items-center gap-3" style="color:rgba(255,255,255,.6)">
+      <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f text-xs"></i></a>
+      <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram text-xs"></i></a>
+      <a href="#" class="hover:text-white transition-colors"><i class="fab fa-tiktok text-xs"></i></a>
+    </div>
+  </div>
+</div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50" style="background:#00254a;box-shadow:0 4px 24px rgba(0,37,74,.45)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-[68px]">
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <img src="img/605603934_18090167021296504_5017235545341432250_n.jpg" alt="InstalElectro" class="h-11 w-auto">
+        <span class="hidden sm:block font-bold text-white text-[17px]">Instal<span style="color:#0d6efd">Electro</span></span>
+      </a>
+      <div class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="dnav-link">Acas&#259;</a>
+        <a href="despre.html" class="dnav-link">Despre</a>
+        <a href="servicii.html" class="dnav-link active">Servicii</a>
+        <a href="servicii.html#preturi" class="dnav-link">Pre&#539;uri</a>
+        <a href="blog.html" class="dnav-link">Blog</a>
+        <a href="contact.html" class="dnav-link">Contact</a>
+        
       </div>
-      <div class="flex items-center gap-3">
-        <a href="#" class="hover:text-white transition-colors w-6 h-6 flex items-center justify-center"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="hover:text-white transition-colors w-6 h-6 flex items-center justify-center"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="hover:text-white transition-colors w-6 h-6 flex items-center justify-center"><i class="fab fa-tiktok"></i></a>
+      <div class="hidden lg:flex items-center gap-2">
+        <a href="contact.html" class="text-sm font-semibold border border-white/20 hover:border-white/50 hover:text-white px-5 py-2.5 rounded-md transition-all" style="color:rgba(255,255,255,.8)">Solicit&#259; ofert&#259;</a>
+        <a href="tel:+37368557199" class="flex items-center gap-2 text-white text-sm font-bold px-5 py-2.5 rounded-md" style="background:#0d6efd"><i class="fas fa-phone text-xs"></i> APELA&#538;I</a>
+      </div>
+      <button id="burger" onclick="toggleMobileMenu()" class="lg:hidden text-white p-2 -mr-2" aria-label="Meniu">
+        <i id="burger-icon" class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu">
+    <div style="background:#001a35;border-top:1px solid rgba(255,255,255,.08)" class="px-4 pt-3 pb-5">
+      <div class="space-y-0.5 mb-4">
+        <a href="index.html" class="mob-link">Acas&#259;</a>
+        <a href="despre.html" class="mob-link">Despre</a>
+        <a href="servicii.html" class="mob-link active">Servicii</a>
+        <a href="servicii.html#preturi" class="mob-link">Pre&#539;uri</a>
+        <a href="blog.html" class="mob-link">Blog</a>
+        <a href="contact.html" class="mob-link">Contact</a>
+        
+      </div>
+      <div class="grid grid-cols-2 gap-2 pt-3" style="border-top:1px solid rgba(255,255,255,.08)">
+        <a href="contact.html" class="flex items-center justify-center gap-2 text-white border border-white/25 text-sm font-semibold py-3 rounded-md"><i class="fas fa-envelope text-xs"></i> Ofert&#259;</a>
+        <a href="tel:+37368557199" class="flex items-center justify-center gap-2 text-white text-sm font-bold py-3 rounded-md" style="background:#0d6efd"><i class="fas fa-phone text-xs"></i> Sun&#259; acum</a>
       </div>
     </div>
   </div>
+</nav>
 
-  <!-- ░░ NAVIGATION ░░ -->
-  <nav class="bg-navy-800 sticky top-0 z-50 shadow-xl">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-center justify-between h-[68px]">
-        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="stag mb-2">SERVICII ELECTRICE</p>
+    <h1 class="text-3xl sm:text-5xl font-bold text-white mb-4">Servicii &amp; Pre&#539;uri</h1>
+    <p class="text-white/65 text-base max-w-xl mx-auto">Servicii electrice complete pentru locuin&#539;e &#537;i spa&#539;ii comerciale &icirc;n Chi&#537;in&#259;u. Pre&#539;uri transparente &#537;i garantate.</p>
+    <div class="flex items-center justify-center gap-2 mt-5 text-sm" style="color:rgba(255,255,255,.5)">
+      <a href="index.html" class="hover:text-white transition-colors">Acas&#259;</a>
+      <i class="fas fa-chevron-right text-[10px]"></i>
+      <span class="text-white">Servicii</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE 1 -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <img src="img/Electrical-Installation-services-1024x683.jpeg" alt="Instalari electrice Chisinau" class="rounded-xl shadow-lg w-full object-cover" style="max-height:380px">
+      </div>
+      <div class="reveal">
+        <span class="stag">SERVICIUL 01</span>
+        <h2 class="text-3xl font-bold leading-tight mt-2 mb-4" style="color:#00254a">Instal&#259;ri &amp; Repara&#539;ii Electrice Chi&#537;in&#259;u</h2>
+        <p class="text-sm leading-relaxed mb-5" style="color:#727272">Oferim servicii complete de instalare &#537;i repara&#539;ii electrice pentru locuin&#539;e &#537;i spa&#539;ii comerciale. Echipa noastr&#259; autorizat&#259; asigur&#259; c&#259; fiecare lucrare respect&#259; standardele de siguran&#539;&#259;.</p>
+        <ul class="space-y-2.5 mb-7">
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Montare prize &#537;i &icirc;ntrerup&#259;toare</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Instalare corpuri de iluminat &#537;i lustre</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Reparatii tablou electric</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Schimbare cabluri &#537;i conducte electrice</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Diagnoz&#259; &#537;i depanare instala&#539;ii</li>
+        </ul>
+        <a href="contact.html" class="btn-a">Solicit&#259; ofert&#259; <i class="fas fa-arrow-right text-sm"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 2 -->
+<section class="py-20" style="background:#f5f7fa">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="md:order-2 reveal">
+        <img src="img/Montarea Re&#x21b;elei Electrice Chi&#x219;in&#x103;u.webp" alt="Montarea retelei electrice" class="rounded-xl shadow-lg w-full object-cover" style="max-height:380px">
+      </div>
+      <div class="md:order-1 reveal">
+        <span class="stag">SERVICIUL 02</span>
+        <h2 class="text-3xl font-bold leading-tight mt-2 mb-4" style="color:#00254a">Montarea Re&#539;elei Electrice Chi&#537;in&#259;u</h2>
+        <p class="text-sm leading-relaxed mb-5" style="color:#727272">Proiect&#259;m &#537;i instal&#259;m re&#539;ele electrice complete pentru apartamente, case &#537;i spa&#539;ii comerciale. Fiecare proiect este realizat conform planurilor tehnice &#537;i normelor &icirc;n vigoare.</p>
+        <ul class="space-y-2.5 mb-7">
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Proiectare re&#539;ea electric&#259; complet&#259;</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Montare tablou electric &#537;i automatice</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Instalare cablu NYM, PVVG &#537;i NYY</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Racordare la re&#539;eaua electric&#259; public&#259;</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Eliberare documenta&#539;ie tehnic&#259;</li>
+        </ul>
+        <a href="contact.html" class="btn-a">Solicit&#259; ofert&#259; <i class="fas fa-arrow-right text-sm"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 3 -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <img src="img/consulting.jpg" alt="Consultanta electrica" class="rounded-xl shadow-lg w-full object-cover" style="max-height:380px">
+      </div>
+      <div class="reveal">
+        <span class="stag">SERVICIUL 03</span>
+        <h2 class="text-3xl font-bold leading-tight mt-2 mb-4" style="color:#00254a">Consultan&#539;&#259; &#537;i Servicii Speciale Electrice</h2>
+        <p class="text-sm leading-relaxed mb-5" style="color:#727272">Oferim consultan&#539;&#259; electric&#259; gratuit&#259; &#537;i solu&#539;ii personalizate pentru optimizarea instala&#539;iei electrice. Expertiza noastr&#259; v&#259; ajut&#259; s&#259; economisi&#539;i energie &#537;i bani.</p>
+        <ul class="space-y-2.5 mb-7">
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Audit energetic &#537;i consultan&#539;&#259; gratuit&#259;</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Sisteme de automatizare cas&#259; inteligent&#259;</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Instalare generatoare &#537;i UPS</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Sisteme panouri solare fotovoltaice</li>
+          <li class="flex items-center gap-2.5 text-sm" style="color:#727272"><i class="fas fa-circle-check text-sm shrink-0" style="color:#0d6efd"></i> Instalare sta&#539;ii &icirc;nc&#259;rcare vehicule electrice</li>
+        </ul>
+        <a href="contact.html" class="btn-a">Solicit&#259; consultan&#539;&#259; <i class="fas fa-arrow-right text-sm"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="preturi" class="py-20" style="background:#00254a">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <span class="stag">TARIFE 2025</span>
+      <h2 class="text-3xl md:text-4xl font-bold leading-tight mt-2 text-white">Pre&#539;uri orientative pentru servicii electrice &icirc;n Chi&#537;in&#259;u</h2>
+      <p class="mt-3 text-sm" style="color:rgba(255,255,255,.6)">Estimare gratuit&#259; la domiciliu. Pre&#539;urile finale pot varia &icirc;n func&#539;ie de complexitatea lucr&#259;rii.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+      <div class="card-hover bg-white rounded-xl p-5 text-center reveal"><div class="icon-circle" style="background:rgba(13,110,253,.1)"><i class="fas fa-plug text-xl" style="color:#0d6efd"></i></div><h4 class="font-bold text-sm mb-1" style="color:#00254a">Montare priz&#259;</h4><p class="text-lg font-bold mb-1" style="color:#0d6efd">150+ MDL</p><p class="text-xs" style="color:#727272">per priz&#259; montat&#259;</p></div>
+      <div class="card-hover bg-white rounded-xl p-5 text-center reveal"><div class="icon-circle" style="background:rgba(13,110,253,.1)"><i class="fas fa-lightbulb text-xl" style="color:#0d6efd"></i></div><h4 class="font-bold text-sm mb-1" style="color:#00254a">Instalare lustr&#259;</h4><p class="text-lg font-bold mb-1" style="color:#0d6efd">200+ MDL</p><p class="text-xs" style="color:#727272">per corp de iluminat</p></div>
+      <div class="card-hover bg-white rounded-xl p-5 text-center reveal"><div class="icon-circle" style="background:rgba(13,110,253,.1)"><i class="fas fa-bolt text-xl" style="color:#0d6efd"></i></div><h4 class="font-bold text-sm mb-1" style="color:#00254a">Schimbare cablu</h4><p class="text-lg font-bold mb-1" style="color:#0d6efd">300+ MDL</p><p class="text-xs" style="color:#727272">per circuit</p></div>
+      <div class="card-hover bg-white rounded-xl p-5 text-center reveal"><div class="icon-circle" style="background:rgba(13,110,253,.1)"><i class="fas fa-screwdriver-wrench text-xl" style="color:#0d6efd"></i></div><h4 class="font-bold text-sm mb-1" style="color:#00254a">Panou electric</h4><p class="text-lg font-bold mb-1" style="color:#0d6efd">400+ MDL</p><p class="text-xs" style="color:#727272">reparatii &#537;i &icirc;nlocuiri</p></div>
+      <div class="card-hover bg-white rounded-xl p-5 text-center reveal"><div class="icon-circle" style="background:rgba(13,110,253,.1)"><i class="fas fa-home text-xl" style="color:#0d6efd"></i></div><h4 class="font-bold text-sm mb-1" style="color:#00254a">Re&#539;ea apartament</h4><p class="text-lg font-bold mb-1" style="color:#0d6efd">3000+ MDL</p><p class="text-xs" style="color:#727272">apartament 2 camere</p></div>
+      <div class="card-hover bg-white rounded-xl p-5 text-center reveal"><div class="icon-circle" style="background:rgba(13,110,253,.1)"><i class="fas fa-building text-xl" style="color:#0d6efd"></i></div><h4 class="font-bold text-sm mb-1" style="color:#00254a">Re&#539;ea cas&#259;</h4><p class="text-lg font-bold mb-1" style="color:#0d6efd">8000+ MDL</p><p class="text-xs" style="color:#727272">cas&#259; individual&#259;</p></div>
+      <div class="card-hover bg-white rounded-xl p-5 text-center reveal"><div class="icon-circle" style="background:rgba(13,110,253,.1)"><i class="fas fa-triangle-exclamation text-xl" style="color:#0d6efd"></i></div><h4 class="font-bold text-sm mb-1" style="color:#00254a">Urgen&#539;&#259; 24/7</h4><p class="text-lg font-bold mb-1" style="color:#0d6efd">500+ MDL</p><p class="text-xs" style="color:#727272">deplasare urgenta</p></div>
+      <div class="card-hover bg-white rounded-xl p-5 text-center reveal"><div class="icon-circle" style="background:rgba(13,110,253,.1)"><i class="fas fa-clipboard-check text-xl" style="color:#0d6efd"></i></div><h4 class="font-bold text-sm mb-1" style="color:#00254a">Consultan&#539;&#259;</h4><p class="text-lg font-bold mb-1" style="color:#0d6efd">GRATUIT</p><p class="text-xs" style="color:#727272">evaluare la domiciliu</p></div>
+    </div>
+    <p class="text-center text-sm mt-4 reveal" style="color:rgba(255,255,255,.6)"><i class="fas fa-circle-check mr-1.5" style="color:#0d6efd"></i>Pre&#539;urile sunt orientative. Contacta&#539;i-ne pentru o estimare exact&#259; gratuit&#259;.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <span class="stag">&#206;NTREB&#258;RI FRECVENTE</span>
+      <h2 class="text-3xl md:text-4xl font-bold leading-tight mt-2" style="color:#00254a">&#206;ntreb&#259;ri despre serviciile electrice &icirc;n Chi&#537;in&#259;u</h2>
+    </div>
+    <div class="space-y-3 reveal">
+      <details class="border rounded-xl overflow-hidden" style="border-color:#e9ecef">
+        <summary class="px-6 py-4 font-semibold cursor-pointer flex items-center justify-between" style="color:#00254a;list-style:none">
+          Oferi&#539;i garan&#539;ie pentru lucr&#259;rile electrice?
+          <i class="fas fa-chevron-down text-xs" style="color:#0d6efd"></i>
+        </summary>
+        <div class="px-6 pb-5 text-sm leading-relaxed" style="color:#727272">Da, oferim garan&#539;ie de 2 ani pentru toate lucr&#259;rile executate. &Icirc;n caz de probleme ap&#259;rute &icirc;n perioada de garan&#539;ie, intervenim gratuit.</div>
+      </details>
+      <details class="border rounded-xl overflow-hidden" style="border-color:#e9ecef">
+        <summary class="px-6 py-4 font-semibold cursor-pointer flex items-center justify-between" style="color:#00254a;list-style:none">
+          C&acirc;t dureaz&#259; o evaluare gratuit&#259;?
+          <i class="fas fa-chevron-down text-xs" style="color:#0d6efd"></i>
+        </summary>
+        <div class="px-6 pb-5 text-sm leading-relaxed" style="color:#727272">Evaluarea la domiciliu dureaz&#259; de obicei 30-60 minute, &icirc;n func&#539;ie de complexitatea proiectului. Electricianul nostru va examina instala&#539;ia &#537;i va oferi o estimare de pre&#539; pe loc.</div>
+      </details>
+      <details class="border rounded-xl overflow-hidden" style="border-color:#e9ecef">
+        <summary class="px-6 py-4 font-semibold cursor-pointer flex items-center justify-between" style="color:#00254a;list-style:none">
+          Lucra&#539;i &#537;i &icirc;n weekend sau noapte?
+          <i class="fas fa-chevron-down text-xs" style="color:#0d6efd"></i>
+        </summary>
+        <div class="px-6 pb-5 text-sm leading-relaxed" style="color:#727272">Da! Suntem disponibili 24/7 pentru urgen&#539;e electrice, inclusiv &icirc;n weekend &#537;i s&#259;rb&#259;tori. Pentru lucr&#259;ri planificate &icirc;n afara orelor de program, rugam s&#259; contacta&#539;i cu 24h &icirc;nainte.</div>
+      </details>
+      <details class="border rounded-xl overflow-hidden" style="border-color:#e9ecef">
+        <summary class="px-6 py-4 font-semibold cursor-pointer flex items-center justify-between" style="color:#00254a;list-style:none">
+          Deservi&#539;i &#537;i localit&#259;&#539;ile din afara Chi&#537;in&#259;ului?
+          <i class="fas fa-chevron-down text-xs" style="color:#0d6efd"></i>
+        </summary>
+        <div class="px-6 pb-5 text-sm leading-relaxed" style="color:#727272">Deserv&#259;m Chi&#537;in&#259;ul &#537;i raza Chi&#537;in&#259;ului, incluz&acirc;nd localit&#259;&#539;ile din &#238;mprejurimi. Pentru localit&#259;&#539;i mai &icirc;ndep&#259;rtate, contacta&#539;i-ne pentru detalii despre disponibilitate &#537;i costuri de deplasare.</div>
+      </details>
+      <details class="border rounded-xl overflow-hidden" style="border-color:#e9ecef">
+        <summary class="px-6 py-4 font-semibold cursor-pointer flex items-center justify-between" style="color:#00254a;list-style:none">
+          Ce materiale folosesc electricienii vo&#537;tri?
+          <i class="fas fa-chevron-down text-xs" style="color:#0d6efd"></i>
+        </summary>
+        <div class="px-6 pb-5 text-sm leading-relaxed" style="color:#727272">Folosim exclusiv materiale certificate de la furnizori verifica&#539;i: cabluri NYM, prize &#537;i &icirc;ntrerup&#259;toare Legrand, Schneider, ABB. Toate materialele vin cu certific&#259;ri de calitate &#537;i siguran&#539;&#259;.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16" style="background:#0d6efd">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+    <h2 class="text-3xl font-bold text-white mb-4">Solicita&#539;i o estimare gratuit&#259; acum</h2>
+    <p class="text-white/80 text-base mb-8">Complete&#539;i formularul sau suna&#539;i direct. R&#259;spundem &icirc;n maxim 30 minute.</p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="tel:+37368557199" class="inline-flex items-center justify-center gap-2 bg-white font-bold px-8 py-4 rounded-md text-sm" style="color:#00254a"><i class="fas fa-phone"></i> +373 68 557 199</a>
+      <a href="contact.html" class="inline-flex items-center justify-center gap-2 border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-md text-sm">Formular ofert&#259; <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer style="background:#00254a">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <div class="flex items-center gap-3 mb-4">
           <img src="img/605603934_18090167021296504_5017235545341432250_n.jpg" alt="InstalElectro" class="h-11 w-auto">
-        </a>
-        <div class="hidden lg:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-white">Acasă</a>
-          <a href="despre.html" class="text-sm font-medium text-gray-400 hover:text-white">Despre</a>
-          <a href="servicii.html" class="text-sm font-medium text-white relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-red-600">Servicii</a>
-          <a href="servicii.html#preturi" class="text-sm font-medium text-gray-400 hover:text-white">Prețuri</a>
-          <a href="blog.html" class="text-sm font-medium text-gray-400 hover:text-white">Blog</a>
-          <a href="contact.html" class="text-sm font-medium text-gray-400 hover:text-white">Contact</a>
+          <span class="font-bold text-white text-lg">Instal<span style="color:#0d6efd">Electro</span></span>
         </div>
-        <div class="hidden lg:flex items-center gap-2">
-          <a href="contact.html" class="flex items-center gap-2 border border-white/25 hover:bg-white/10 text-white text-xs font-semibold px-5 py-[9px] transition-colors rounded-sm whitespace-nowrap">
-            Solicită ofertă
-          </a>
-          <a href="tel:+37368557199" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-6 py-3 tracking-widest uppercase transition-colors rounded-sm">
-            <i class="fas fa-phone"></i> APELAȚI
-          </a>
+        <p class="text-sm leading-relaxed mb-5" style="color:rgba(255,255,255,.55)">Servicii electrice profesioniste &icirc;n Chi&#537;in&#259;u &#537;i &icirc;mprejurimi. Calitate garantat&#259;, disponibilitate 24/7.</p>
+        <div class="flex items-center gap-2.5">
+          <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm" style="background:rgba(255,255,255,.1)"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm" style="background:rgba(255,255,255,.1)"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm" style="background:rgba(255,255,255,.1)"><i class="fab fa-tiktok"></i></a>
         </div>
-        <button class="lg:hidden text-white p-2 -mr-2"><i class="fas fa-bars text-xl"></i></button>
       </div>
-    </div>
-  </nav>
-  <!-- ░░ MOBILE MENU ░░ -->
-  <div id="mobile-menu" class="lg:hidden overflow-hidden" style="max-height:0;transition:max-height .35s cubic-bezier(.4,0,.2,1);">
-    <div style="background:#0e1c2e;border-top:1px solid rgba(255,255,255,.08);" class="px-5 pt-3 pb-5">
-      <div class="space-y-0.5 mb-4" id="mobile-links">
-        <a href="index.html"          class="mob-link">Acasă</a>
-        <a href="despre.html"         class="mob-link">Despre</a>
-        <a href="servicii.html"       class="mob-link">Servicii</a>
-        <a href="servicii.html#preturi" class="mob-link">Prețuri</a>
-        <a href="blog.html"           class="mob-link">Blog</a>
-        <a href="contact.html"        class="mob-link">Contact</a>
+      <div class="md:col-span-2">
+        <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-5">Pagini</h4>
+        <ul class="space-y-3">
+          <li><a href="index.html"    class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Acas&#259;</a></li>
+          <li><a href="despre.html"   class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Despre</a></li>
+          <li><a href="servicii.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Servicii</a></li>
+          <li><a href="blog.html"     class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Blog</a></li>
+          <li><a href="contact.html"  class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Contact</a></li>
+        </ul>
       </div>
-      <div class="grid grid-cols-2 gap-3 pt-4" style="border-top:1px solid rgba(255,255,255,.08);">
-        <a href="contact.html" class="flex items-center justify-center gap-2 text-white text-xs font-semibold py-3.5 rounded-sm" style="border:1px solid rgba(255,255,255,.25);">
-          <i class="fas fa-envelope text-xs"></i> Solicită ofertă
-        </a>
-        <a href="tel:+37368557199" class="flex items-center justify-center gap-2 bg-red-600 text-white text-xs font-bold py-3.5 rounded-sm hover:bg-red-700">
-          <i class="fas fa-phone text-xs"></i> Sună acum
-        </a>
+      <div class="md:col-span-3">
+        <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-5">Servicii</h4>
+        <ul class="space-y-3">
+          <li><a href="servicii.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Instal&#259;ri electrice</a></li>
+          <li><a href="servicii.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Repara&#539;ii electrice</a></li>
+          <li><a href="servicii.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Panou electric</a></li>
+          <li><a href="servicii.html" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Urgen&#539;e electrice 24/7</a></li>
+          <li><a href="contact.html"  class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">Consultan&#539;&#259; gratuit&#259;</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-5">Contact</h4>
+        <ul class="space-y-3.5">
+          <li class="flex items-start gap-2.5"><i class="fas fa-phone text-xs mt-1 shrink-0" style="color:#0d6efd"></i><a href="tel:+37368557199" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">+373 68 557 199</a></li>
+          <li class="flex items-start gap-2.5"><i class="fas fa-envelope text-xs mt-1 shrink-0" style="color:#0d6efd"></i><a href="mailto:info@instalelectro.md" class="text-sm hover:text-white transition-colors" style="color:rgba(255,255,255,.55)">info@instalelectro.md</a></li>
+          <li class="flex items-start gap-2.5"><i class="fas fa-location-dot text-xs mt-1 shrink-0" style="color:#0d6efd"></i><div><p class="text-sm" style="color:rgba(255,255,255,.55)">Bd. Mircea Costin 23, Chi&#537;in&#259;u</p><p class="text-xs font-semibold mt-0.5" style="color:#0d6efd">Deserv&#259;m Chi&#537;in&#259;u &#537;i raza Chi&#537;in&#259;ului</p></div></li>
+        </ul>
       </div>
     </div>
   </div>
-  <style>
-    .mob-link { display:flex; align-items:center; padding:.75rem .75rem; color:#d1d5db; font-size:.875rem; font-weight:500; border-radius:2px; transition:background .15s,color .15s; }
-    .mob-link:hover, .mob-link.active { color:#fff; background:rgba(255,255,255,.07); }
-  </style>
-  <script>
-  // Mobile menu toggle
-  function toggleMobileMenu() {
-    var m=document.getElementById('mobile-menu');
-    var i=document.getElementById('burger-icon');
-    var open = m.style.maxHeight && m.style.maxHeight !== '0px';
-    m.style.maxHeight = open ? '0px' : '520px';
-    if(i){ i.className = open ? 'fas fa-bars text-xl' : 'fas fa-times text-xl'; }
-  }
-  // Close on outside click
-  document.addEventListener('click',function(e){
-    var m=document.getElementById('mobile-menu');
-    var b=document.getElementById('burger');
-    if(m && b && !b.contains(e.target) && !m.contains(e.target) && m.style.maxHeight!=='0px'){
-      m.style.maxHeight='0px';
-      var i=document.getElementById('burger-icon');
-      if(i) i.className='fas fa-bars text-xl';
-    }
-  });
-  // Highlight active link
-  (function(){
-    var p=location.pathname.split('/').pop()||'index.html';
-    document.querySelectorAll('.mob-link').forEach(function(a){
-      if(a.getAttribute('href')===p || (p==='' && a.getAttribute('href')==='index.html')) a.classList.add('active');
-    });
-  })();
-  </script>
-
-  <!-- ░░ PAGE HERO ░░ -->
-  <section class="page-hero-bg py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <p class="text-gray-400 text-xs mb-3"><a href="index.html" class="hover:text-white transition-colors">Acasă</a> <span class="mx-2 text-gray-600">/</span> <span class="text-white">Servicii</span></p>
-      <h1 class="text-4xl md:text-5xl font-bold text-white">Servicii Electrice Chișinău</h1>
-      <p class="text-gray-400 mt-3 max-w-xl text-sm leading-relaxed">Montaj, reparații și urgențe electrice profesionale în Chișinău. Disponibili 24/7.</p>
-    </div>
-  </section>
-
-  <!-- ░░ SERVICES DETAIL ░░ -->
-  <section class="py-14 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <p class="tag mb-3">Servicii Electrice Chișinău</p>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 max-w-2xl mx-auto leading-tight">
-          Montaj electric, reparații electrice și modernizări electrice în Chișinău
-        </h2>
-      </div>
-
-      <!-- Service 1 -->
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-20">
-        <div class="img-zoom rounded-sm overflow-hidden shadow-xl">
-          <img src="img/Electrical-Installation-services-1024x683.jpeg" alt="Instalări Electrice" class="w-full h-full object-cover">
-        </div>
-        <div>
-          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
-            <i class="fas fa-bolt text-red-600 text-2xl"></i>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Instalări & Reparații Electrice Chișinău</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">Servicii complete de instalare și reparație electrică pentru apartamente, case și spații comerciale din Chișinău. Echipa noastră autorizată lucrează rapid și cu materiale certificate.</p>
-          <ul class="space-y-2 mb-7">
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Montare prize și întrerupătoare</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Instalare corpuri de iluminat</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Reparații și înlocuire cabluri electrice</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Verificare și testare instalații existente</li>
-          </ul>
-          <a href="contact.html" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-7 py-3.5 rounded-sm transition-colors">
-            Solicită ofertă <i class="fas fa-arrow-right text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Service 2 -->
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-20">
-        <div class="order-2 md:order-1">
-          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
-            <i class="fas fa-network-wired text-red-600 text-2xl"></i>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Montarea Rețelei Electrice Chișinău</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">Proiectare și montaj complet al rețelei electrice pentru apartamente noi, case sau spații comerciale. Realizăm instalații electrice complete de la zero sau modernizăm instalațiile existente.</p>
-          <ul class="space-y-2 mb-7">
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Proiectare rețea electrică personalizată</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Montaj tablou electric nou</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Instalare cabluri în tub protector</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Punere la pământ (împământare)</li>
-          </ul>
-          <a href="contact.html" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-7 py-3.5 rounded-sm transition-colors">
-            Solicită ofertă <i class="fas fa-arrow-right text-xs"></i>
-          </a>
-        </div>
-        <div class="img-zoom rounded-sm overflow-hidden shadow-xl order-1 md:order-2">
-          <img src="img/Montarea Rețelei Electrice Chișinău.webp" alt="Rețea Electrică" class="w-full h-full object-cover">
-        </div>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="img-zoom rounded-sm overflow-hidden shadow-xl">
-          <img src="img/consulting.jpg" alt="Urgențe Electrice" class="w-full h-full object-cover">
-        </div>
-        <div>
-          <div class="w-14 h-14 bg-red-50 rounded-sm flex items-center justify-center mb-6">
-            <i class="fas fa-triangle-exclamation text-red-600 text-2xl"></i>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Servicii Speciale & Urgențe Electrice 24/7</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">Disponibili non-stop pentru orice urgență electrică în Chișinău. Intervenție rapidă, într-un timp record, cu echipamente profesionale și electricieni autorizați.</p>
-          <ul class="space-y-2 mb-7">
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Reparații urgente tablou electric</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Depanare scurtcircuite</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Reconectare după avarie rețea</li>
-            <li class="flex items-start gap-2 text-sm text-gray-700"><i class="fas fa-circle-check text-red-600 mt-0.5 shrink-0"></i> Consultanță electrică gratuită</li>
-          </ul>
-          <a href="tel:+37368557199" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-7 py-3.5 rounded-sm transition-colors">
-            <i class="fas fa-phone text-xs"></i> Apelați urgența
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ PRICING ░░ -->
-  <section class="py-14 md:py-24 bg-gray-50" id="preturi">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <p class="tag mb-3">Tab Electrică</p>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 max-w-2xl mx-auto leading-tight">
-          Prețuri orientative și oferte speciale pentru servicii electrice în Chișinău
-        </h2>
-        <p class="text-gray-500 text-sm mt-4">Prețurile sunt orientative. Contactați-ne pentru o ofertă personalizată.</p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-        <div class="bg-white border border-gray-200 rounded-sm p-6 text-center hover:border-red-200 hover:shadow-md transition-all">
-          <div class="w-12 h-12 mx-auto mb-4 bg-red-50 rounded-sm flex items-center justify-center">
-            <i class="fas fa-plug text-red-600 text-xl"></i>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm mb-1.5 leading-snug">Montare priză Chișinău</h4>
-          <p class="text-red-600 font-bold text-lg mb-1">150 lei</p>
-          <p class="text-gray-400 text-xs">preț de la</p>
-        </div>
-        <div class="bg-white border border-gray-200 rounded-sm p-6 text-center hover:border-red-200 hover:shadow-md transition-all">
-          <div class="w-12 h-12 mx-auto mb-4 bg-red-50 rounded-sm flex items-center justify-center">
-            <i class="fas fa-lightbulb text-red-600 text-xl"></i>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm mb-1.5 leading-snug">Instalare lustră Chișinău</h4>
-          <p class="text-red-600 font-bold text-lg mb-1">200 lei</p>
-          <p class="text-gray-400 text-xs">preț de la</p>
-        </div>
-        <div class="bg-white border border-gray-200 rounded-sm p-6 text-center hover:border-red-200 hover:shadow-md transition-all">
-          <div class="w-12 h-12 mx-auto mb-4 bg-red-50 rounded-sm flex items-center justify-center">
-            <i class="fas fa-bolt text-red-600 text-xl"></i>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm mb-1.5 leading-snug">Schimbare cablu electric Chișinău</h4>
-          <p class="text-red-600 font-bold text-lg mb-1">500 lei</p>
-          <p class="text-gray-400 text-xs">preț de la / m</p>
-        </div>
-        <div class="bg-navy-800 rounded-sm p-6 text-center">
-          <div class="w-12 h-12 mx-auto mb-4 bg-white/10 rounded-sm flex items-center justify-center">
-            <i class="fas fa-server text-white text-xl"></i>
-          </div>
-          <h4 class="font-bold text-white text-sm mb-1.5 leading-snug">Reparații panou electric Chișinău</h4>
-          <p class="text-red-400 font-bold text-lg mb-1">300 lei</p>
-          <p class="text-gray-400 text-xs">preț de la</p>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-4 mb-4">
-        <div class="bg-white border border-gray-200 rounded-sm p-6 hover:border-red-200 hover:shadow-md transition-all">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-red-50 rounded-sm flex items-center justify-center shrink-0">
-              <i class="fas fa-house text-red-600 text-xl"></i>
-            </div>
-            <div class="flex-1">
-              <h4 class="font-bold text-gray-900 text-sm">Pachet complet pentru apartament Chișinău</h4>
-              <p class="text-gray-400 text-xs mt-1">Instalare completă 1-3 camere, include toate materialele</p>
-            </div>
-            <a href="contact.html" class="text-red-600 text-xs font-bold hover:text-red-700 whitespace-nowrap shrink-0">Solicită ofertă →</a>
-          </div>
-        </div>
-        <div class="bg-navy-800 rounded-sm p-6">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-white/10 rounded-sm flex items-center justify-center shrink-0">
-              <i class="fas fa-comments text-white text-xl"></i>
-            </div>
-            <div class="flex-1">
-              <h4 class="font-bold text-white text-sm">Consultanță electrică gratuită Chișinău</h4>
-              <p class="text-gray-400 text-xs mt-1">Evaluare gratuită la domiciliu sau telefonic</p>
-            </div>
-            <a href="contact.html" class="text-red-400 text-xs font-bold hover:text-red-300 whitespace-nowrap shrink-0">Contactați →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-white border border-gray-200 rounded-sm p-6 text-center hover:border-red-200 hover:shadow-md transition-all">
-          <div class="w-12 h-12 mx-auto mb-4 bg-red-50 rounded-sm flex items-center justify-center">
-            <i class="fas fa-toggle-on text-red-600 text-xl"></i>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm mb-1.5">Montare întrerupător</h4>
-          <p class="text-red-600 font-bold text-lg mb-1">100 lei</p>
-          <p class="text-gray-400 text-xs">preț de la</p>
-        </div>
-        <div class="bg-white border border-gray-200 rounded-sm p-6 text-center hover:border-red-200 hover:shadow-md transition-all">
-          <div class="w-12 h-12 mx-auto mb-4 bg-red-50 rounded-sm flex items-center justify-center">
-            <i class="fas fa-fan text-red-600 text-xl"></i>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm mb-1.5">Conectare boiler electric</h4>
-          <p class="text-red-600 font-bold text-lg mb-1">350 lei</p>
-          <p class="text-gray-400 text-xs">preț de la</p>
-        </div>
-        <div class="bg-white border border-gray-200 rounded-sm p-6 text-center hover:border-red-200 hover:shadow-md transition-all">
-          <div class="w-12 h-12 mx-auto mb-4 bg-red-50 rounded-sm flex items-center justify-center">
-            <i class="fas fa-temperature-high text-red-600 text-xl"></i>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm mb-1.5">Conectare aragaz electric</h4>
-          <p class="text-red-600 font-bold text-lg mb-1">400 lei</p>
-          <p class="text-gray-400 text-xs">preț de la</p>
-        </div>
-        <div class="bg-white border border-gray-200 rounded-sm p-6 text-center hover:border-red-200 hover:shadow-md transition-all">
-          <div class="w-12 h-12 mx-auto mb-4 bg-red-50 rounded-sm flex items-center justify-center">
-            <i class="fas fa-charging-station text-red-600 text-xl"></i>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm mb-1.5">Montaj automat electric</h4>
-          <p class="text-red-600 font-bold text-lg mb-1">120 lei</p>
-          <p class="text-gray-400 text-xs">preț de la</p>
-        </div>
-      </div>
-
-      <p class="text-center text-gray-400 text-xs mt-8">
-        Transparență completă în ofertare. Formăm graficul de la InstalElectro pentru orice lucrare electrică. Prețurile pot varia în funcție de complexitatea lucrării.
-      </p>
-    </div>
-  </section>
-
-  <!-- ░░ FAQ ░░ -->
-  <section class="py-14 md:py-24 bg-white">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <p class="tag mb-3">Întrebări frecvente</p>
-        <h2 class="text-4xl font-bold text-gray-900">Aveți întrebări despre serviciile electrice?</h2>
-      </div>
-      <div class="space-y-4">
-        <details class="bg-gray-50 rounded-sm p-6 group cursor-pointer">
-          <summary class="font-bold text-gray-900 text-sm flex justify-between items-center list-none">
-            Cât durează o instalare electrică completă a unui apartament?
-            <i class="fas fa-plus text-red-600 group-open:rotate-45 transition-transform shrink-0 ml-4"></i>
-          </summary>
-          <p class="text-gray-500 text-sm mt-4 leading-relaxed">O instalare electrică completă pentru un apartament de 2-3 camere durează, de obicei, 3-5 zile lucrătoare, în funcție de complexitatea proiectului și suprafața locuinței. Vă oferim o estimare exactă după evaluarea gratuită.</p>
-        </details>
-        <details class="bg-gray-50 rounded-sm p-6 group cursor-pointer">
-          <summary class="font-bold text-gray-900 text-sm flex justify-between items-center list-none">
-            Electricienii dvs. sunt autorizați ANRE Moldova?
-            <i class="fas fa-plus text-red-600 group-open:rotate-45 transition-transform shrink-0 ml-4"></i>
-          </summary>
-          <p class="text-gray-500 text-sm mt-4 leading-relaxed">Da, toți electricienii din echipa InstalElectro sunt autorizați de ANRE Moldova și dețin toate certificările necesare. Lucrăm conform normelor tehnice și legislației în vigoare.</p>
-        </details>
-        <details class="bg-gray-50 rounded-sm p-6 group cursor-pointer">
-          <summary class="font-bold text-gray-900 text-sm flex justify-between items-center list-none">
-            Oferiți garanție pentru lucrările executate?
-            <i class="fas fa-plus text-red-600 group-open:rotate-45 transition-transform shrink-0 ml-4"></i>
-          </summary>
-          <p class="text-gray-500 text-sm mt-4 leading-relaxed">Da, oferim garanție de 1 an pentru toate lucrările executate. Dacă apare orice problemă în această perioadă care ține de execuția noastră, revenim și remediem gratuit.</p>
-        </details>
-        <details class="bg-gray-50 rounded-sm p-6 group cursor-pointer">
-          <summary class="font-bold text-gray-900 text-sm flex justify-between items-center list-none">
-            Cât de repede puteți interveni în caz de urgență electrică?
-            <i class="fas fa-plus text-red-600 group-open:rotate-45 transition-transform shrink-0 ml-4"></i>
-          </summary>
-          <p class="text-gray-500 text-sm mt-4 leading-relaxed">Suntem disponibili 24/7, inclusiv weekend și sărbători. În cazul urgențelor electrice, ne străduim să ajungem la dvs. în maximum 30-60 de minute în Chișinău.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ CTA ░░ -->
-  <section class="py-20 bg-navy-800">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-white mb-4">Solicitați o ofertă gratuită</h2>
-      <p class="text-gray-400 text-sm leading-relaxed mb-8 max-w-xl mx-auto">Contactați-ne acum și primiți o estimare gratuită pentru orice lucrare electrică.</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="tel:+37368557199" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-sm text-sm transition-colors">
-          <i class="fas fa-phone"></i> +373 68 557 199
-        </a>
-        <a href="contact.html" class="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-bold px-8 py-4 rounded-sm text-sm transition-colors">
-          Trimite mesaj <i class="fas fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ FOOTER ░░ -->
-  <footer class="bg-navy-900">
-    <div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
-      <div class="grid md:grid-cols-12 gap-10 mb-14">
-        <div class="md:col-span-4">
-          <a href="index.html" class="flex items-center gap-2.5 mb-5">
-            <img src="img/605603934_18090167021296504_5017235545341432250_n.jpg" alt="InstalElectro" class="h-11 w-auto">
-          </a>
-          <p class="text-gray-500 text-sm leading-relaxed mb-6">Servicii electrice profesionale în Chișinău. Electricieni autorizați pentru instalări, reparații și urgențe.</p>
-          <div class="flex gap-2">
-            <a href="#" class="w-9 h-9 bg-white/8 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all rounded-sm text-sm"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="w-9 h-9 bg-white/8 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all rounded-sm text-sm"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="w-9 h-9 bg-white/8 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all rounded-sm text-sm"><i class="fab fa-tiktok"></i></a>
-          </div>
-        </div>
-        <div class="md:col-span-2">
-          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-5">Navigare</h4>
-          <ul class="space-y-2.5">
-            <li><a href="index.html" class="text-gray-500 text-sm hover:text-white transition-colors">Acasă</a></li>
-            <li><a href="despre.html" class="text-gray-500 text-sm hover:text-white transition-colors">Despre noi</a></li>
-            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Servicii</a></li>
-            <li><a href="servicii.html#preturi" class="text-gray-500 text-sm hover:text-white transition-colors">Prețuri</a></li>
-            <li><a href="blog.html" class="text-gray-500 text-sm hover:text-white transition-colors">Blog</a></li>
-            <li><a href="contact.html" class="text-gray-500 text-sm hover:text-white transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <div class="md:col-span-3">
-          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-5">Servicii</h4>
-          <ul class="space-y-2.5">
-            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Instalări electrice Chișinău</a></li>
-            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Reparații electrice Chișinău</a></li>
-            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Urgențe electrice 24/7</a></li>
-            <li><a href="servicii.html" class="text-gray-500 text-sm hover:text-white transition-colors">Tablouri electrice</a></li>
-            <li><a href="contact.html" class="text-gray-500 text-sm hover:text-white transition-colors">Consultanță gratuită</a></li>
-          </ul>
-        </div>
-        <div class="md:col-span-3">
-          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-5">Contact</h4>
-          <ul class="space-y-3.5">
-            <li class="flex items-start gap-3">
-              <i class="fas fa-phone text-red-500 text-xs mt-1 w-4 shrink-0"></i>
-              <div>
-                <a href="tel:+37368557199" class="text-gray-400 text-sm hover:text-white transition-colors block">+373 68 557 199</a>
-                <a href="tel:+37368557199" class="text-gray-400 text-sm hover:text-white transition-colors block">+373 68 557 199</a>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="fas fa-envelope text-red-500 text-xs mt-1 w-4 shrink-0"></i>
-              <a href="mailto:info@instalelectro.md" class="text-gray-400 text-sm hover:text-white transition-colors">info@instalelectro.md</a>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="fas fa-map-marker-alt text-red-500 text-xs mt-1 w-4 shrink-0"></i>
-              <span class="text-gray-400 text-sm">Bd. Mircea Costin 23, Chișinău</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-white/8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-gray-600 text-xs">© 2026 InstalElectro. Servicii electrice profesionale în Chișinău. Toate drepturile rezervate.</p>
-        <p class="text-gray-600 text-xs">Designed for <span class="text-gray-500">instalelectro.md</span></p>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- ░░ DISCOUNT POPUP ░░ -->
-  <div id="ie-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);backdrop-filter:blur(5px);align-items:center;justify-content:center;opacity:0;transition:opacity .4s ease;" role="dialog" aria-modal="true">
-    <div id="ie-box" style="background:#fff;max-width:420px;width:calc(100% - 2rem);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.35);transform:scale(.9);transition:transform .45s cubic-bezier(.34,1.56,.64,1);position:relative;">
-      <button onclick="ieClose()" aria-label="Inchide" style="position:absolute;top:10px;right:10px;width:28px;height:28px;background:rgba(255,255,255,.15);border:none;cursor:pointer;border-radius:50%;color:white;font-size:15px;display:flex;align-items:center;justify-content:center;z-index:2;">&#x2715;</button>
-      <!-- Header dark -->
-      <div style="background:#1a2535;padding:2.25rem 1.75rem;text-align:center;">
-        <div style="width:54px;height:54px;background:#dc2626;border-radius:2px;margin:0 auto .9rem;display:flex;align-items:center;justify-content:center;">
-          <svg width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
-        </div>
-        <p style="color:#f87171;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:.35rem;font-family:'DM Sans',sans-serif;">Ofertă specială</p>
-        <p style="color:white;font-size:2.1rem;font-weight:800;line-height:1.1;font-family:'Syne',sans-serif;margin-bottom:.3rem;">10% Reducere</p>
-        <p style="color:#9ca3af;font-size:.85rem;font-family:'DM Sans',sans-serif;">La prima ta comandă de servicii electrice!</p>
-      </div>
-      <!-- Body -->
-      <div style="padding:1.6rem 1.75rem 1.75rem;text-align:center;">
-        <p style="color:#6b7280;font-size:.82rem;margin-bottom:1rem;font-family:'DM Sans',sans-serif;">Menționați codul la contact pentru a beneficia de reducere:</p>
-        <div style="background:#fef2f2;border:2px dashed #fca5a5;padding:.8rem 1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-          <span style="font-size:1.55rem;font-weight:800;color:#dc2626;letter-spacing:.2em;font-family:'Syne',sans-serif;">ELECTRO10</span>
-          <button id="ie-copy" onclick="ieCopy()" title="Copiați codul" style="width:34px;height:34px;min-width:34px;background:#dc2626;border:none;cursor:pointer;border-radius:2px;display:flex;align-items:center;justify-content:center;color:white;transition:background .2s;">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-          </button>
-        </div>
-        <p style="color:#9ca3af;font-size:.7rem;margin-bottom:1rem;font-family:'DM Sans',sans-serif;">Valabil pentru comenzi noi. Nu se combină cu alte oferte.</p>
-        <a href="contact.html" onclick="ieClose()" style="display:block;background:#dc2626;color:white;font-weight:700;padding:.85rem;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-family:'DM Sans',sans-serif;transition:background .2s;" onmouseover="this.style.background='#b91c1c'" onmouseout="this.style.background='#dc2626'">
-          Solicită oferta acum &rarr;
-        </a>
-      </div>
+  <div style="border-top:1px solid rgba(255,255,255,.08)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs" style="color:rgba(255,255,255,.35)">Copyright 2025 InstalElectro. Servicii electrice profesioniste &icirc;n Chi&#537;in&#259;u. Toate drepturile rezervate.</p>
+      <a href="contact.html" class="text-xs font-semibold hover:text-white transition-colors" style="color:#0d6efd">Apeleaz&#259; pentru o problem&#259; electric&#259; &rarr;</a>
     </div>
   </div>
-
-  <script>
-  /* ── Popup ── */
-  (function(){
-    if(sessionStorage.getItem('ie_popup'))return;
-    var p=document.getElementById('ie-popup'),b=document.getElementById('ie-box');
-    setTimeout(function(){
-      p.style.display='flex';
-      requestAnimationFrame(function(){requestAnimationFrame(function(){
-        p.style.opacity='1';b.style.transform='scale(1)';
-      });});
-      sessionStorage.setItem('ie_popup','1');
-    },4500);
-    if(p)p.addEventListener('click',function(e){if(e.target===p)ieClose();});
-  })();
-  function ieClose(){
-    var p=document.getElementById('ie-popup'),b=document.getElementById('ie-box');
-    if(!p)return;
-    p.style.opacity='0';b.style.transform='scale(.88)';
-    setTimeout(function(){p.style.display='none';},420);
-  }
-  function ieCopy(){
-    try{navigator.clipboard.writeText('ELECTRO10');}catch(ex){}
-    var btn=document.getElementById('ie-copy');
-    btn.style.background='#16a34a';
-    btn.innerHTML='<svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
-    setTimeout(function(){
-      btn.style.background='#dc2626';
-      btn.innerHTML='<svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
-    },2500);
-  }
-
-  /* ── Scroll reveal ── */
-  document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('section').forEach(function(sec){
-      var els=Array.from(sec.querySelectorAll(
-        'h2, h3, article, .grid > div, .grid > a, .grid > article, p.tag, form'
-      ));
-      els.forEach(function(el,i){
-        if(el.classList.contains('reveal'))return;
-        el.classList.add('reveal');
-        el.style.transitionDelay=(i*0.075)+'s';
-      });
-    });
-    if(!('IntersectionObserver'in window)){
-      document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
-      return;
-    }
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
-      });
-    },{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
-    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
-  });
-  </script>
-
-  <!-- ░░ MOBILE FLOATING CTA ░░ -->
-  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 flex" style="box-shadow:0 -4px 24px rgba(0,0,0,.35);">
-    <a href="tel:+37368557199"
-       class="flex-1 flex items-center justify-center gap-2.5 bg-red-600 text-white font-bold py-4 text-sm active:bg-red-700"
-       style="letter-spacing:.04em;">
-      <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-      Sună acum
-    </a>
-    <a href="contact.html"
-       class="flex-1 flex items-center justify-center gap-2.5 text-white font-semibold py-4 text-sm active:opacity-80"
-       style="background:#1a2535;border-left:1px solid rgba(255,255,255,.12);">
-      <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      Solicită ofertă
-    </a>
-  </div>
-</body>
-</html>
+</footer>
+<!-- MOBILE FLOATING CTA -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 flex" style="box-shadow:0 -4px 24px rgba(0,0,0,.3)">
+  <a href="tel:+37368557199" class="flex-1 flex items-center justify-center gap-2.5 text-white font-bold py-4 text-sm" style="background:#00254a"><i class="fas fa-phone"></i> Sun&#259; acum</a>
+  <a href="contact.html" class="flex-1 flex items-center justify-center gap-2.5 text-white font-semibold py-4 text-sm" style="background:#0d6efd"><i class="fas fa-envelope"></i> Solicit&#259; ofert&#259;</a>
+</div>
+<script>
+  function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),i=document.getElementById('burger-icon'),open=m.style.maxHeight&&m.style.maxHeight!=='0px';m.style.maxHeight=open?'0px':'520px';if(i)i.className=open?'fas fa-bars text-xl':'fas fa-times text-xl';}
+  document.addEventListener('click',function(e){var m=document.getElementById('mobile-menu'),b=document.getElementById('burger');if(m&&b&&!b.contains(e.target)&&!m.contains(e.target)&&m.style.maxHeight!=='0px'){m.style.maxHeight='0px';var i=document.getElementById('burger-icon');if(i)i.className='fas fa-bars text-xl';}});
+  var ro=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+</script>
+</body></html>

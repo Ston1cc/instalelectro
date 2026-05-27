@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+
+html = open('index.html', encoding='utf-8').read()
+# We'll overwrite with new content
+pass
+
+content = '''<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +16,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config={theme:{extend:{colors:{primary:"#00254a","primary-dark":"#001a35",accent:"#0d6efd","accent-h":"#0a58ca",body:"#727272",dark:"#16171a",g1:"#f5f7fa"},fontFamily:{sans:["\"DM Sans\"","sans-serif"]}}}}
+    tailwind.config={theme:{extend:{colors:{primary:"#00254a","primary-dark":"#001a35",accent:"#0d6efd","accent-h":"#0a58ca",body:"#727272",dark:"#16171a",g1:"#f5f7fa"},fontFamily:{sans:["\\"DM Sans\\"","sans-serif"]}}}}
   </script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
@@ -129,7 +134,7 @@
 <section class="hero-swiper swiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <div class="slide-bg" style="background-image:url('img/hero_img.jpg')"></div>
+      <div class="slide-bg" style="background-image:url(\'img/hero_img.jpg\')"></div>
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -146,7 +151,7 @@
       </div>
     </div>
     <div class="swiper-slide">
-      <div class="slide-bg" style="background-image:url('img/teamofelectricians.jpg')"></div>
+      <div class="slide-bg" style="background-image:url(\'img/teamofelectricians.jpg\')"></div>
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -160,7 +165,7 @@
       </div>
     </div>
     <div class="swiper-slide">
-      <div class="slide-bg" style="background-image:url('img/Electrical-Installation-services-1024x683.jpeg')"></div>
+      <div class="slide-bg" style="background-image:url(\'img/Electrical-Installation-services-1024x683.jpeg\')"></div>
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -367,10 +372,10 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-10 reveal"><h2 class="text-2xl font-bold" style="color:#00254a">Partenerii no&#537;tri</h2></div>
     <div class="flex items-center justify-center gap-10 md:gap-16 flex-wrap reveal">
-      <img src="img/605603934_18090167021296504_5017235545341432250_n.jpg" alt="InstalElectro" class="h-10 w-auto" style="filter:grayscale(1) opacity(.5);transition:filter .3s" onmouseover="this.style.filter='grayscale(0) opacity(1)'" onmouseout="this.style.filter='grayscale(1) opacity(.5)'">
-      <span class="text-2xl font-black tracking-widest" style="color:#ced4da;transition:color .3s;cursor:default" onmouseover="this.style.color='#00254a'" onmouseout="this.style.color='#ced4da'">eNERGIA</span>
-      <span class="text-2xl font-black tracking-widest" style="color:#ced4da;transition:color .3s;cursor:default" onmouseover="this.style.color='#00254a'" onmouseout="this.style.color='#ced4da'">VOLTEX</span>
-      <span class="text-2xl font-black tracking-widest" style="color:#ced4da;transition:color .3s;cursor:default" onmouseover="this.style.color='#00254a'" onmouseout="this.style.color='#ced4da'">ELCON</span>
+      <img src="img/605603934_18090167021296504_5017235545341432250_n.jpg" alt="InstalElectro" class="h-10 w-auto" style="filter:grayscale(1) opacity(.5);transition:filter .3s" onmouseover="this.style.filter=\'grayscale(0) opacity(1)\'" onmouseout="this.style.filter=\'grayscale(1) opacity(.5)\'">
+      <span class="text-2xl font-black tracking-widest" style="color:#ced4da;transition:color .3s;cursor:default" onmouseover="this.style.color=\'#00254a\'" onmouseout="this.style.color=\'#ced4da\'">eNERGIA</span>
+      <span class="text-2xl font-black tracking-widest" style="color:#ced4da;transition:color .3s;cursor:default" onmouseover="this.style.color=\'#00254a\'" onmouseout="this.style.color=\'#ced4da\'">VOLTEX</span>
+      <span class="text-2xl font-black tracking-widest" style="color:#ced4da;transition:color .3s;cursor:default" onmouseover="this.style.color=\'#00254a\'" onmouseout="this.style.color=\'#ced4da\'">ELCON</span>
     </div>
   </div>
 </section>
@@ -427,22 +432,26 @@
       <h3 style="font-size:1.5rem;font-weight:800;color:#00254a;margin-bottom:8px">Ofert&#259; Special&#259;!</h3>
       <p style="color:#727272;font-size:.875rem;margin-bottom:20px;line-height:1.6">Beneficia&#539;i de <strong style="color:#00254a">10% reducere</strong> la prima comand&#259;. Copia&#539;i codul:</p>
       <div style="background:#f5f7fa;border:2px dashed rgba(13,110,253,.35);border-radius:10px;padding:16px 20px;margin-bottom:18px"><p style="font-size:1.75rem;font-weight:800;color:#0d6efd;letter-spacing:.1em">ELECTRO10</p></div>
-      <button id="ie-copy-btn" onclick="ieCopy()" style="width:100%;background:#00254a;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.875rem;border:none;border-radius:8px;padding:14px;cursor:pointer;margin-bottom:12px"><i class="fas fa-copy" style="margin-right:6px"></i> Copiaz&#259; codul</button>
-      <button onclick="ieClose()" style="width:100%;background:none;border:none;color:#adb5bd;font-size:.8rem;cursor:pointer;font-family:'DM Sans',sans-serif">Nu, mul&#539;umesc</button>
+      <button id="ie-copy-btn" onclick="ieCopy()" style="width:100%;background:#00254a;color:#fff;font-family:\'DM Sans\',sans-serif;font-weight:700;font-size:.875rem;border:none;border-radius:8px;padding:14px;cursor:pointer;margin-bottom:12px"><i class="fas fa-copy" style="margin-right:6px"></i> Copiaz&#259; codul</button>
+      <button onclick="ieClose()" style="width:100%;background:none;border:none;color:#adb5bd;font-size:.8rem;cursor:pointer;font-family:\'DM Sans\',sans-serif">Nu, mul&#539;umesc</button>
     </div>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  new Swiper('.hero-swiper',{loop:true,speed:900,autoplay:{delay:5500,disableOnInteraction:false},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},pagination:{el:'.swiper-pagination',clickable:true},effect:'fade',fadeEffect:{crossFade:true}});
-  function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),i=document.getElementById('burger-icon'),open=m.style.maxHeight&&m.style.maxHeight!=='0px';m.style.maxHeight=open?'0px':'520px';if(i)i.className=open?'fas fa-bars text-xl':'fas fa-times text-xl';}
-  document.addEventListener('click',function(e){var m=document.getElementById('mobile-menu'),b=document.getElementById('burger');if(m&&b&&!b.contains(e.target)&&!m.contains(e.target)&&m.style.maxHeight!=='0px'){m.style.maxHeight='0px';var i=document.getElementById('burger-icon');if(i)i.className='fas fa-bars text-xl';}});
-  var ro=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
-  function ieClose(){document.getElementById('ie-popup').style.display='none';}
-  function ieCopy(){navigator.clipboard.writeText('ELECTRO10').then(function(){var b=document.getElementById('ie-copy-btn');b.innerHTML='<i class="fas fa-check" style="margin-right:6px"></i> Copiat!';b.style.background='#198754';setTimeout(function(){b.innerHTML='<i class="fas fa-copy" style="margin-right:6px"></i> Copiaz&#259; codul';b.style.background='#00254a';},2500);});}
-  if(!sessionStorage.getItem('ie_popup')){setTimeout(function(){document.getElementById('ie-popup').style.display='flex';sessionStorage.setItem('ie_popup','1');},4500);}
+  new Swiper(\'.hero-swiper\',{loop:true,speed:900,autoplay:{delay:5500,disableOnInteraction:false},navigation:{nextEl:\'.swiper-button-next\',prevEl:\'.swiper-button-prev\'},pagination:{el:\'.swiper-pagination\',clickable:true},effect:\'fade\',fadeEffect:{crossFade:true}});
+  function toggleMobileMenu(){var m=document.getElementById(\'mobile-menu\'),i=document.getElementById(\'burger-icon\'),open=m.style.maxHeight&&m.style.maxHeight!==\'0px\';m.style.maxHeight=open?\'0px\':\'520px\';if(i)i.className=open?\'fas fa-bars text-xl\':\'fas fa-times text-xl\';}
+  document.addEventListener(\'click\',function(e){var m=document.getElementById(\'mobile-menu\'),b=document.getElementById(\'burger\');if(m&&b&&!b.contains(e.target)&&!m.contains(e.target)&&m.style.maxHeight!==\'0px\'){m.style.maxHeight=\'0px\';var i=document.getElementById(\'burger-icon\');if(i)i.className=\'fas fa-bars text-xl\';}});
+  var ro=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add(\'visible\');ro.unobserve(e.target);}});},{threshold:.08,rootMargin:\'0px 0px -40px 0px\'});
+  document.querySelectorAll(\'.reveal\').forEach(function(el){ro.observe(el);});
+  function ieClose(){document.getElementById(\'ie-popup\').style.display=\'none\';}
+  function ieCopy(){navigator.clipboard.writeText(\'ELECTRO10\').then(function(){var b=document.getElementById(\'ie-copy-btn\');b.innerHTML=\'<i class="fas fa-check" style="margin-right:6px"></i> Copiat!\';b.style.background=\'#198754\';setTimeout(function(){b.innerHTML=\'<i class="fas fa-copy" style="margin-right:6px"></i> Copiaz&#259; codul\';b.style.background=\'#00254a\';},2500);});}
+  if(!sessionStorage.getItem(\'ie_popup\')){setTimeout(function(){document.getElementById(\'ie-popup\').style.display=\'flex\';sessionStorage.setItem(\'ie_popup\',\'1\');},4500);}
 </script>
 </body>
-</html>
+</html>'''
+
+with open(r'w:\website_projects\instalelectro\index.html', 'w', encoding='utf-8') as f:
+    f.write(content)
+print(f"Done: {len(content)} chars")
