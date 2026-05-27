@@ -42,12 +42,21 @@
       transition: opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1);
     }
     .reveal.visible { opacity: 1; transform: none; }
+  
+    /* ── Mobile / Global ── */
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; }
+    @media (max-width: 1023px) {
+      body { padding-bottom: 68px; }   /* room for floating CTA */
+    }
   </style>
 </head>
 <body class="bg-white">
 
   <!-- ░░ TOP BAR ░░ -->
-  <div class="bg-navy-950 text-gray-400 text-xs py-2 border-b border-white/5">
+  <div class="hidden sm:block bg-navy-950 text-gray-400 text-xs py-2 border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
       <div class="flex items-center gap-6">
         <a href="tel:+37368557199" class="flex items-center gap-1.5 hover:text-white transition-colors">
@@ -90,26 +99,78 @@
           <i class="fas fa-phone"></i> APELAȚI
         </a>
         <!-- Mobile toggle -->
-        <button class="lg:hidden text-white p-2 -mr-2">
-          <i class="fas fa-bars text-xl"></i>
+        <button id="burger" onclick="toggleMobileMenu()" class="lg:hidden text-white p-2 -mr-2" aria-label="Meniu">
+          <i id="burger-icon" class="fas fa-bars text-xl"></i>
         </button>
       </div>
     </div>
   </nav>
+  <!-- ░░ MOBILE MENU ░░ -->
+  <div id="mobile-menu" class="lg:hidden overflow-hidden" style="max-height:0;transition:max-height .35s cubic-bezier(.4,0,.2,1);">
+    <div style="background:#0e1c2e;border-top:1px solid rgba(255,255,255,.08);" class="px-5 pt-3 pb-5">
+      <div class="space-y-0.5 mb-4" id="mobile-links">
+        <a href="index.html"          class="mob-link">Acasă</a>
+        <a href="despre.html"         class="mob-link">Despre</a>
+        <a href="servicii.html"       class="mob-link">Servicii</a>
+        <a href="servicii.html#preturi" class="mob-link">Prețuri</a>
+        <a href="blog.html"           class="mob-link">Blog</a>
+        <a href="contact.html"        class="mob-link">Contact</a>
+      </div>
+      <div class="grid grid-cols-2 gap-3 pt-4" style="border-top:1px solid rgba(255,255,255,.08);">
+        <a href="contact.html" class="flex items-center justify-center gap-2 text-white text-xs font-semibold py-3.5 rounded-sm" style="border:1px solid rgba(255,255,255,.25);">
+          <i class="fas fa-envelope text-xs"></i> Solicită ofertă
+        </a>
+        <a href="tel:+37368557199" class="flex items-center justify-center gap-2 bg-red-600 text-white text-xs font-bold py-3.5 rounded-sm hover:bg-red-700">
+          <i class="fas fa-phone text-xs"></i> Sună acum
+        </a>
+      </div>
+    </div>
+  </div>
+  <style>
+    .mob-link { display:flex; align-items:center; padding:.75rem .75rem; color:#d1d5db; font-size:.875rem; font-weight:500; border-radius:2px; transition:background .15s,color .15s; }
+    .mob-link:hover, .mob-link.active { color:#fff; background:rgba(255,255,255,.07); }
+  </style>
+  <script>
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    var m=document.getElementById('mobile-menu');
+    var i=document.getElementById('burger-icon');
+    var open = m.style.maxHeight && m.style.maxHeight !== '0px';
+    m.style.maxHeight = open ? '0px' : '520px';
+    if(i){ i.className = open ? 'fas fa-bars text-xl' : 'fas fa-times text-xl'; }
+  }
+  // Close on outside click
+  document.addEventListener('click',function(e){
+    var m=document.getElementById('mobile-menu');
+    var b=document.getElementById('burger');
+    if(m && b && !b.contains(e.target) && !m.contains(e.target) && m.style.maxHeight!=='0px'){
+      m.style.maxHeight='0px';
+      var i=document.getElementById('burger-icon');
+      if(i) i.className='fas fa-bars text-xl';
+    }
+  });
+  // Highlight active link
+  (function(){
+    var p=location.pathname.split('/').pop()||'index.html';
+    document.querySelectorAll('.mob-link').forEach(function(a){
+      if(a.getAttribute('href')===p || (p==='' && a.getAttribute('href')==='index.html')) a.classList.add('active');
+    });
+  })();
+  </script>
 
   <!-- ░░ HERO ░░ -->
   <section class="hero-bg min-h-[560px] flex items-center relative">
     <div class="max-w-7xl mx-auto px-6 py-24 relative z-10 w-full">
       <div class="max-w-2xl">
         <p class="tag mb-4 text-red-400">Electricieni Autorizați · Chișinău</p>
-        <h1 class="text-5xl md:text-6xl font-bold text-white leading-[1.08] mb-6">
+        <h1 class="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-5">
           Instalări și Reparații Electrice<br>
           <span class="text-red-500">Profesionale</span>
         </h1>
-        <p class="text-gray-300 text-lg leading-relaxed mb-10 max-w-lg">
+        <p class="text-gray-300 text-base leading-relaxed mb-8 max-w-lg">
           Echipă autorizată de electricieni în Chișinău. Prețuri transparente, intervenție rapidă, garanție pe lucrări.
         </p>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-col sm:flex-row gap-3">
           <a href="tel:+37368557199" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 text-sm uppercase tracking-widest transition-colors rounded-sm shadow-2xl shadow-red-900/40">
             <i class="fas fa-phone"></i> APELAȚI ACUM
           </a>
@@ -174,9 +235,9 @@
   </section>
 
   <!-- ░░ ABOUT ░░ -->
-  <section class="py-24 bg-white">
+  <section class="py-14 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <!-- Text -->
         <div>
           <p class="tag mb-3">Despre InstalElectro</p>
@@ -217,7 +278,7 @@
             <img src="img/teamofelectricians.jpg" alt="Echipa InstalElectro" class="w-full h-full object-cover">
           </div>
           <!-- Badge -->
-          <div class="absolute -bottom-5 -left-5 bg-red-600 text-white px-7 py-5 shadow-xl shadow-red-900/30 rounded-sm">
+          <div class="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-red-600 text-white px-7 py-5 shadow-xl shadow-red-900/30 rounded-sm">
             <p class="text-3xl font-bold leading-none">10+</p>
             <p class="text-xs text-red-200 mt-1 font-medium">Ani de experiență</p>
           </div>
@@ -227,11 +288,11 @@
   </section>
 
   <!-- ░░ SERVICES ░░ -->
-  <section class="py-24 bg-gray-50">
+  <section class="py-14 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14">
         <p class="tag mb-3">Servicii Electrice Chișinău</p>
-        <h2 class="text-4xl font-bold text-gray-900 max-w-2xl mx-auto leading-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 max-w-2xl mx-auto leading-tight">
           Montaj electric, reparații electrice și modernizări electrice în Chișinău
         </h2>
       </div>
@@ -280,11 +341,11 @@
   </section>
 
   <!-- ░░ PRICING ░░ -->
-  <section class="py-24 bg-white" id="preturi">
+  <section class="py-14 md:py-24 bg-white" id="preturi">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14">
         <p class="tag mb-3">Tab Electrică</p>
-        <h2 class="text-4xl font-bold text-gray-900 max-w-2xl mx-auto leading-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 max-w-2xl mx-auto leading-tight">
           Prețuri orientative și oferte speciale pentru servicii electrice în Chișinău
         </h2>
       </div>
@@ -357,15 +418,15 @@
   </section>
 
   <!-- ░░ EMERGENCY SERVICES ░░ -->
-  <section class="py-24 bg-gray-50">
+  <section class="py-14 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14">
         <p class="tag mb-3">Electrician & Urgență Chișinău</p>
-        <h2 class="text-4xl font-bold text-gray-900 max-w-2xl mx-auto leading-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 max-w-2xl mx-auto leading-tight">
           Intervenții rapide și servicii de urgență electrică în Chișinău
         </h2>
       </div>
-      <div class="grid md:grid-cols-4 gap-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <div class="bg-white rounded-sm p-7 text-center shadow-sm hover-lift cursor-pointer">
           <div class="w-14 h-14 mx-auto mb-5 bg-red-50 rounded-sm flex items-center justify-center">
             <i class="fas fa-plug-circle-bolt text-red-600 text-2xl"></i>
@@ -400,7 +461,7 @@
   </section>
 
   <!-- ░░ TESTIMONIALS ░░ -->
-  <section class="py-24 bg-white">
+  <section class="py-14 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14">
         <p class="tag mb-3">Mărturii Electrice Chișinău</p>
@@ -452,7 +513,7 @@
   </section>
 
   <!-- ░░ CONTACT FORM ░░ -->
-  <section class="py-24 bg-navy-800">
+  <section class="py-14 md:py-24 bg-navy-800">
     <div class="max-w-2xl mx-auto px-6">
       <div class="text-center mb-10">
         <p class="text-red-400 text-xs font-bold uppercase tracking-widest mb-3">Contact InstalElectro</p>
@@ -488,7 +549,7 @@
   </section>
 
   <!-- ░░ BLOG PREVIEW ░░ -->
-  <section class="py-24 bg-gray-50">
+  <section class="py-14 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14">
         <p class="tag mb-3">Articole Electrice</p>
@@ -705,5 +766,21 @@
     document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   });
   </script>
+
+  <!-- ░░ MOBILE FLOATING CTA ░░ -->
+  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 flex" style="box-shadow:0 -4px 24px rgba(0,0,0,.35);">
+    <a href="tel:+37368557199"
+       class="flex-1 flex items-center justify-center gap-2.5 bg-red-600 text-white font-bold py-4 text-sm active:bg-red-700"
+       style="letter-spacing:.04em;">
+      <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Sună acum
+    </a>
+    <a href="contact.html"
+       class="flex-1 flex items-center justify-center gap-2.5 text-white font-semibold py-4 text-sm active:opacity-80"
+       style="background:#1a2535;border-left:1px solid rgba(255,255,255,.12);">
+      <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Solicită ofertă
+    </a>
+  </div>
 </body>
 </html>

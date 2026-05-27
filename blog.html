@@ -31,12 +31,21 @@
       transition: opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1);
     }
     .reveal.visible { opacity: 1; transform: none; }
+  
+    /* ── Mobile / Global ── */
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; }
+    @media (max-width: 1023px) {
+      body { padding-bottom: 68px; }   /* room for floating CTA */
+    }
   </style>
 </head>
 <body class="bg-white">
 
   <!-- ░░ TOP BAR ░░ -->
-  <div class="bg-navy-950 text-gray-400 text-xs py-2 border-b border-white/5">
+  <div class="hidden sm:block bg-navy-950 text-gray-400 text-xs py-2 border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
       <div class="flex items-center gap-6">
         <a href="tel:+37368557199" class="flex items-center gap-1.5 hover:text-white transition-colors">
@@ -79,6 +88,58 @@
       </div>
     </div>
   </nav>
+  <!-- ░░ MOBILE MENU ░░ -->
+  <div id="mobile-menu" class="lg:hidden overflow-hidden" style="max-height:0;transition:max-height .35s cubic-bezier(.4,0,.2,1);">
+    <div style="background:#0e1c2e;border-top:1px solid rgba(255,255,255,.08);" class="px-5 pt-3 pb-5">
+      <div class="space-y-0.5 mb-4" id="mobile-links">
+        <a href="index.html"          class="mob-link">Acasă</a>
+        <a href="despre.html"         class="mob-link">Despre</a>
+        <a href="servicii.html"       class="mob-link">Servicii</a>
+        <a href="servicii.html#preturi" class="mob-link">Prețuri</a>
+        <a href="blog.html"           class="mob-link">Blog</a>
+        <a href="contact.html"        class="mob-link">Contact</a>
+      </div>
+      <div class="grid grid-cols-2 gap-3 pt-4" style="border-top:1px solid rgba(255,255,255,.08);">
+        <a href="contact.html" class="flex items-center justify-center gap-2 text-white text-xs font-semibold py-3.5 rounded-sm" style="border:1px solid rgba(255,255,255,.25);">
+          <i class="fas fa-envelope text-xs"></i> Solicită ofertă
+        </a>
+        <a href="tel:+37368557199" class="flex items-center justify-center gap-2 bg-red-600 text-white text-xs font-bold py-3.5 rounded-sm hover:bg-red-700">
+          <i class="fas fa-phone text-xs"></i> Sună acum
+        </a>
+      </div>
+    </div>
+  </div>
+  <style>
+    .mob-link { display:flex; align-items:center; padding:.75rem .75rem; color:#d1d5db; font-size:.875rem; font-weight:500; border-radius:2px; transition:background .15s,color .15s; }
+    .mob-link:hover, .mob-link.active { color:#fff; background:rgba(255,255,255,.07); }
+  </style>
+  <script>
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    var m=document.getElementById('mobile-menu');
+    var i=document.getElementById('burger-icon');
+    var open = m.style.maxHeight && m.style.maxHeight !== '0px';
+    m.style.maxHeight = open ? '0px' : '520px';
+    if(i){ i.className = open ? 'fas fa-bars text-xl' : 'fas fa-times text-xl'; }
+  }
+  // Close on outside click
+  document.addEventListener('click',function(e){
+    var m=document.getElementById('mobile-menu');
+    var b=document.getElementById('burger');
+    if(m && b && !b.contains(e.target) && !m.contains(e.target) && m.style.maxHeight!=='0px'){
+      m.style.maxHeight='0px';
+      var i=document.getElementById('burger-icon');
+      if(i) i.className='fas fa-bars text-xl';
+    }
+  });
+  // Highlight active link
+  (function(){
+    var p=location.pathname.split('/').pop()||'index.html';
+    document.querySelectorAll('.mob-link').forEach(function(a){
+      if(a.getAttribute('href')===p || (p==='' && a.getAttribute('href')==='index.html')) a.classList.add('active');
+    });
+  })();
+  </script>
 
   <!-- ░░ PAGE HERO ░░ -->
   <section class="page-hero-bg py-20">
@@ -90,12 +151,12 @@
   </section>
 
   <!-- ░░ BLOG GRID ░░ -->
-  <section class="py-24 bg-gray-50">
+  <section class="py-14 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- Featured Post -->
       <div class="bg-white rounded-sm overflow-hidden shadow-sm hover-lift mb-8 cursor-pointer">
-        <div class="md:flex">
+        <div class="md:flex flex-col">
           <div class="md:w-5/12 h-64 md:h-auto img-zoom">
             <img src="img/SaveClip.App_705988781_18106225730296504_6646898435395370222_n.jpg" alt="Blog Featured" class="w-full h-full object-cover">
           </div>
@@ -408,5 +469,21 @@
     document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   });
   </script>
+
+  <!-- ░░ MOBILE FLOATING CTA ░░ -->
+  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 flex" style="box-shadow:0 -4px 24px rgba(0,0,0,.35);">
+    <a href="tel:+37368557199"
+       class="flex-1 flex items-center justify-center gap-2.5 bg-red-600 text-white font-bold py-4 text-sm active:bg-red-700"
+       style="letter-spacing:.04em;">
+      <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Sună acum
+    </a>
+    <a href="contact.html"
+       class="flex-1 flex items-center justify-center gap-2.5 text-white font-semibold py-4 text-sm active:opacity-80"
+       style="background:#1a2535;border-left:1px solid rgba(255,255,255,.12);">
+      <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Solicită ofertă
+    </a>
+  </div>
 </body>
 </html>
